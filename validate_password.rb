@@ -6,9 +6,9 @@ class ValidatePassword
   def valid?
     return false unless min_length?
     return false unless contains_capital_letter?
-    return false unless has_lower_case_letter?
-    return false unless has_underscore?
-    return false unless has_number?
+    return false unless lower_case_letter?
+    return false unless underscore?
+    return false unless number?
 
     true
   end
@@ -23,15 +23,15 @@ class ValidatePassword
     @password.match(/[A-Z]/)
   end
 
-  def has_lower_case_letter?
+  def lower_case_letter?
     @password.match(/[a-z]/)
   end
 
-  def has_underscore?
+  def underscore?
     @password.match(/[_]/)
   end
 
-  def has_number?
+  def number?
     @password.match(/[0-9]/)
   end
 end
