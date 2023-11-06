@@ -1,5 +1,9 @@
+##
+# Validates a password according to set of pre-defined validation rules
 class ValidatePassword
   class << self
+    ##
+    # @param [String, #read] password The password that will be checked
     def valid?(password)
       @password = password.to_s
       return false unless min_length?
