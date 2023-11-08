@@ -7,13 +7,12 @@ class ValidatePassword
     # @return [Boolean] returns true or false if password is valid or not
     def valid?(password)
       @password = password.to_s
-      return false unless min_length?
-      return false unless contains_capital_letter?
-      return false unless lower_case_letter?
-      return false unless underscore?
-      return false unless number?
 
-      true
+      min_length? &&
+        contains_capital_letter? &&
+        lower_case_letter? &&
+        underscore? &&
+        number?
     end
 
     private
